@@ -1,0 +1,142 @@
+.frame {
+    background-color: #ffffff;
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    width: 100vw;
+}
+
+.frame .background-text-wrapper {
+    background-color: #ffffff;
+    width: 1920px;
+    height: 1080px;
+}
+
+.frame .background-text {
+    position: relative;
+    width: 1004px;
+    height: 733px;
+    top: 174px;
+    left: 458px;
+}
+
+.frame .overlap {
+    position: relative;
+    width: 1008px;
+    height: 733px;
+}
+
+.frame .main-text {
+    position: absolute;
+    width: 961px;
+    height: 722px;
+    top: 11px;
+    left: 25px;
+}
+
+.frame .overlap-group {
+    position: relative;
+    width: 957px;
+    height: 722px;
+    top: -1px;
+    left: -1px;
+}
+
+.frame .text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke: 1px #00000080;
+    background: linear-gradient(
+            180deg,
+            rgba(119, 119, 119, 1) 59%,
+            rgba(0, 0, 0, 1) 88%
+    );
+    -webkit-background-clip: text !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: transparent;
+    font-size: 300px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .div {
+    position: absolute;
+    top: 359px;
+    left: 134px;
+    -webkit-text-stroke: 1px #00000080;
+    background: linear-gradient(
+            180deg,
+            rgba(119, 119, 119, 1) 59%,
+            rgba(0, 0, 0, 1) 88%
+    );
+    -webkit-background-clip: text !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: transparent;
+    font-size: 300px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .overlap-wrapper {
+    position: absolute;
+    width: 961px;
+    height: 722px;
+    top: 0;
+    left: 0;
+}
+
+.frame .text-wrapper-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke: 1px #000000;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 300px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-3 {
+    position: absolute;
+    top: 359px;
+    left: 134px;
+    -webkit-text-stroke: 1px #000000;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 300px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+/* Original CSS code should be injected here */
+
+/* Additional styles for semantic improvements */
+h1,
+h2 {
+    margin: 0;
+}
+
+/* Ensure proper heading hierarchy styling */
+.frame h1.text-wrapper {
+    font-size: 300px;
+}
+
+.frame h2.div {
+    font-size: 300px;
+}
+
+/* Maintain visual consistency for decorative text */
+.frame span[aria-hidden="true"] {
+    pointer-events: none;
+}

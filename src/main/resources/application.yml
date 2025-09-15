@@ -6,7 +6,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/paytestdb
+    url: jdbc:mysql://localhost:3306/hulahoopbluedb
     username: ohgiraffers
     password: ohgiraffers
 

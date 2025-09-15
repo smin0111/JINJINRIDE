@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohgiraffers.usehistory.model.dao.UseHistoryMapper">
+
+    <insert id="insertUseHistory" parameterType="com.ohgiraffers.usehistory.model.dto.UseHistoryDTO">
+        INSERT INTO T_UseHistory
+        (member_num, phone_num, category_cd, merchant_num, brokerage,
+         payment_date_time, use_start_date_time, use_end_date_time, reservation_status)
+        VALUES
+            (#{memberNum}, #{phoneNum}, #{categoryCd}, #{merchantNum}, #{brokerage},
+             NOW(), #{useStartDateTime}, #{useEndDateTime}, #{reservationStatus})
+    </insert>
+
+</mapper>
