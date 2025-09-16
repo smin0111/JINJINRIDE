@@ -1,27 +1,26 @@
 package com.ohgiraffers.usehistory.model.dto;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class UseHistoryDTO {
 
-    private int transactionNum;           // 거래번호
-    private String memberNum;             // 회원번호
-    private String phoneNum;              // 전화번호 (비회원일 경우 기재)
-    private String categoryCd;            // 카테고리 코드
-    private String merchantNum;           // 가맹점 번호
-    private BigDecimal brokerage;         // 중개수수료 금액
-    private LocalDateTime paymentDateTime; // 결제일자
-    private LocalDateTime useStartDateTime; // 이용 시작일자
-    private LocalDateTime useEndDateTime;   // 이용 종료일자
-    private String reservationStatus;       // 예약상태 (Y:예약중, N:이용완료, C:예약취소)
+    private Integer transactionNum;    // 거래번호, AUTO_INCREMENT
+    private String memberNum;          // 회원번호
+    private String phoneNum;           // 전화번호 (비회원일 경우 기재)
+    private String categoryCd;         // 카테고리 코드
+    private String merchantNum;        // 가맹점 번호
+    private BigDecimal brokerage;      // 중개수수료 금액
+    private Date paymentDateTime;      // 결제일자
+    private Date useStartDateTime;     // 이용 시작일자
+    private Date useEndDateTime;       // 이용 종료일자
+    private String reservationStatus;  // 예약상태 (Y:예약중, N:이용완료, C:예약취소)
 
     public UseHistoryDTO() {}
 
-    public UseHistoryDTO(int transactionNum, String memberNum, String phoneNum, String categoryCd,
-                         String merchantNum, BigDecimal brokerage, LocalDateTime paymentDateTime,
-                         LocalDateTime useStartDateTime, LocalDateTime useEndDateTime, String reservationStatus) {
-        this.transactionNum = transactionNum;
+    public UseHistoryDTO(String memberNum, String phoneNum, String categoryCd, String merchantNum,
+                         BigDecimal brokerage, Date paymentDateTime, Date useStartDateTime,
+                         Date useEndDateTime, String reservationStatus) {
         this.memberNum = memberNum;
         this.phoneNum = phoneNum;
         this.categoryCd = categoryCd;
@@ -33,9 +32,9 @@ public class UseHistoryDTO {
         this.reservationStatus = reservationStatus;
     }
 
-    // ====== Getter / Setter ======
-    public int getTransactionNum() { return transactionNum; }
-    public void setTransactionNum(int transactionNum) { this.transactionNum = transactionNum; }
+    // ======= Getter & Setter =======
+    public Integer getTransactionNum() { return transactionNum; }
+    public void setTransactionNum(Integer transactionNum) { this.transactionNum = transactionNum; }
 
     public String getMemberNum() { return memberNum; }
     public void setMemberNum(String memberNum) { this.memberNum = memberNum; }
@@ -52,14 +51,14 @@ public class UseHistoryDTO {
     public BigDecimal getBrokerage() { return brokerage; }
     public void setBrokerage(BigDecimal brokerage) { this.brokerage = brokerage; }
 
-    public LocalDateTime getPaymentDateTime() { return paymentDateTime; }
-    public void setPaymentDateTime(LocalDateTime paymentDateTime) { this.paymentDateTime = paymentDateTime; }
+    public Date getPaymentDateTime() { return paymentDateTime; }
+    public void setPaymentDateTime(Date paymentDateTime) { this.paymentDateTime = paymentDateTime; }
 
-    public LocalDateTime getUseStartDateTime() { return useStartDateTime; }
-    public void setUseStartDateTime(LocalDateTime useStartDateTime) { this.useStartDateTime = useStartDateTime; }
+    public Date getUseStartDateTime() { return useStartDateTime; }
+    public void setUseStartDateTime(Date useStartDateTime) { this.useStartDateTime = useStartDateTime; }
 
-    public LocalDateTime getUseEndDateTime() { return useEndDateTime; }
-    public void setUseEndDateTime(LocalDateTime useEndDateTime) { this.useEndDateTime = useEndDateTime; }
+    public Date getUseEndDateTime() { return useEndDateTime; }
+    public void setUseEndDateTime(Date useEndDateTime) { this.useEndDateTime = useEndDateTime; }
 
     public String getReservationStatus() { return reservationStatus; }
     public void setReservationStatus(String reservationStatus) { this.reservationStatus = reservationStatus; }

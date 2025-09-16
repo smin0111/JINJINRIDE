@@ -2,12 +2,16 @@ package com.ohgiraffers.merchant.model.dao;
 
 import com.ohgiraffers.merchant.model.dto.MerchantDTO;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 @Mapper
 public interface MerchantMapper {
 
-    // 가맹점 조회 (merchant_num 기준)
-    @Select("SELECT * FROM T_Merchant WHERE merchant_num = #{merchantNum}")
+    // 전체 가맹점 조회
+    List<MerchantDTO> findAllMerchants();
+
+    // 단일 가맹점 조회 (merchant_num 기준)
     MerchantDTO findByMerchantNum(String merchantNum);
+
 }

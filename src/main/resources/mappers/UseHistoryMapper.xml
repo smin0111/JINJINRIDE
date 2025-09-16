@@ -11,7 +11,8 @@
          payment_date_time, use_start_date_time, use_end_date_time, reservation_status)
         VALUES
             (#{memberNum}, #{phoneNum}, #{categoryCd}, #{merchantNum}, #{brokerage},
-             NOW(), #{useStartDateTime}, #{useEndDateTime}, #{reservationStatus})
+             #{paymentDateTime}, #{useStartDateTime}, #{useEndDateTime}, #{reservationStatus})
     </insert>
+
 
 </mapper>

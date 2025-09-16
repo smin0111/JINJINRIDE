@@ -5,7 +5,7 @@
 
 <mapper namespace="com.ohgiraffers.merchant.model.dao.MerchantMapper">
 
-    <!-- Merchant 테이블 매핑 -->
+    <!-- Merchant DTO 매핑 -->
     <resultMap id="merchantResultMap" type="com.ohgiraffers.merchant.model.dto.MerchantDTO">
         <id property="merchantNum" column="merchant_num"/>
         <result property="categoryCd" column="category_cd"/>
@@ -25,48 +25,17 @@
         SELECT merchant_num, category_cd, merchant_nm, api_key, business_num,
         reg_date_time, modify_date_time, end_date_time, brokerage_rate,
         brokerage, contract_status
-        FROM merchant
+        FROM T_Merchant
         ORDER BY merchant_num
     </select>
 
     <!-- 단일 가맹점 조회 -->
-    <select id="findMerchantById" parameterType="string" resultMap="merchantResultMap">
+    <select id="findByMerchantNum" parameterType="string" resultMap="merchantResultMap">
         SELECT merchant_num, category_cd, merchant_nm, api_key, business_num,
         reg_date_time, modify_date_time, end_date_time, brokerage_rate,
         brokerage, contract_status
-        FROM merchant
+        FROM T_Merchant
         WHERE merchant_num = #{merchantNum}
     </select>
-
-    <!-- 신규 가맹점 등록 -->
-    <insert id="insertMerchant" parameterType="com.ohgiraffers.merchant.model.dto.MerchantDTO">
-        INSERT INTO merchant (merchant_num, category_cd, merchant_nm, api_key, business_num,
-        reg_date_time, modify_date_time, end_date_time, brokerage_rate,
-        brokerage, contract_status)
-        VALUES (#{merchantNum}, #{categoryCd}, #{merchantNm}, #{apiKey}, #{businessNum},
-        #{regDateTime}, #{modifyDateTime}, #{endDateTime}, #{brokerageRate},
-        #{brokerage}, #{contractStatus})
-    </insert>
-
-    <!-- 가맹점 수정 -->
-    <update id="updateMerchant" parameterType="com.ohgiraffers.merchant.model.dto.MerchantDTO">
-        UPDATE merchant
-        SET category_cd = #{categoryCd},
-        merchant_nm = #{merchantNm},
-        api_key = #{apiKey},
-        business_num = #{businessNum},
-        modify_date_time = #{modifyDateTime},
-        end_date_time = #{endDateTime},
-        brokerage_rate = #{brokerageRate},
-        brokerage = #{brokerage},
-        contract_status = #{contractStatus}
-        WHERE merchant_num = #{merchantNum}
-    </update>
-
-    <!-- 가맹점 삭제 -->
-    <delete id="deleteMerchant" parameterType="string">
-        DELETE FROM merchant
-        WHERE merchant_num = #{merchantNum}
-    </delete>
 
 </mapper>
